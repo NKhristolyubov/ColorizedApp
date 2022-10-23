@@ -10,12 +10,12 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var redSliderValue: Double = 100
-    @State private var greenSliderValue: Double = 100
-    @State private var blueSliderValue: Double = 100
+    @State private var greenSliderValue: Double = 150
+    @State private var blueSliderValue: Double = 200
     
-    @State private var redTFValue: String = "10"
-    @State private var greenTFValue: String = "20"
-    @State private var blueTFValue: String = "30"
+    @State private var redTFValue: String = "100"
+    @State private var greenTFValue: String = "150"
+    @State private var blueTFValue: String = "200"
     
     var body: some View {
         VStack {
@@ -26,9 +26,9 @@ struct ContentView: View {
                 .frame(height: 200)
                 .cornerRadius(15)
             VStack {
-                ColorSliderView(sliderValue: $redSliderValue, textValue: $redTFValue)
-                ColorSliderView(sliderValue: $greenSliderValue, textValue: $greenTFValue)
-                ColorSliderView(sliderValue: $blueSliderValue, textValue: $blueTFValue)
+                ColorSliderView(sliderValue: $redSliderValue, textValue: $redTFValue, currentColor: .red)
+                ColorSliderView(sliderValue: $greenSliderValue, textValue: $greenTFValue, currentColor: .green)
+                ColorSliderView(sliderValue: $blueSliderValue, textValue: $blueTFValue, currentColor: .blue)
             }
             Spacer()
         }
